@@ -7,26 +7,26 @@ A Simple OCR Project
 ### 项目文件
 
 ~~~
-├── Dockerfile				# Dockerfile
-├── Procfile					# Deploy to Heroku Config
-├── README.md					#
-├── UnitTest					# UnitTest
+├── Dockerfile	# Dockerfile
+├── Procfile	# Deploy to Heroku Config
+├── README.md	#
+├── UnitTest	# UnitTest
 │   ├── __init__.py
-│   ├── resources			# Test images
-│   ├── test_dao.py		# Test Dao
-│   └── test_ocr.py		# Test OCR
-├── manager.py				#
+│   ├── resources	# Test images
+│   ├── test_dao.py	# Test Dao
+│   └── test_ocr.py	# Test OCR
+├── manager.py	#
 ├── requirements.txt	# requirement
-├── resources					# Images
-├── simple_ocr				# Core
+├── resources	# Images
+├── simple_ocr	# Core
 │   ├── __init__.py
 │   ├── config
 │   	├── __init__.py	# Config File Here
 │   ├── constants.py	# Project Constants
-│   ├── dao						# Dao
-│   ├── main.py				# Core Entry
-│   ├── models.py			# models
-│   └── ocr						# ocr module
+│   ├── dao	# Dao
+│   ├── main.py	# Core Entry
+│   ├── models.py	# models
+│   └── ocr	# ocr module
 ~~~
 
 ### 项目启动
@@ -34,8 +34,8 @@ A Simple OCR Project
 - Docker
 
   ```
-  docker build -t simple-ocr .						# build
-  docker run  -p 5000:5000  simple-ocr		# run
+  docker build -t simple-ocr .	# build
+  docker run  -p 5000:5000  simple-ocr	# run
   ```
 
 ### 项目部署
