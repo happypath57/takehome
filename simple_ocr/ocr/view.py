@@ -3,7 +3,7 @@
 from fastapi import UploadFile, File, APIRouter
 
 from simple_ocr.dao.ocr import OCRDao
-from simple_ocr.ocr.helpers import validate_extension, add_filename_suffix, OCRRecognition
+from simple_ocr.ocr.helpers import validate_extension, add_filename_suffix, OCRRecognition, common_response
 
 ocr_router = APIRouter()
 
@@ -21,13 +21,14 @@ async def upload_image(
     filename_split = filename.rsplit(".", 1)
     is_ok = validate_extension(filename_split[-1])
     if not is_ok:
-        ...
+        return common_response(code=400, message="File Extension Error!, Only png/jpg allowed!")
     new_filename = add_filename_suffix(filename_split)
     ocr_recognition = OCRRecognition()
     try:
         result = await ocr_recognition.do_ocr(file)
     except Exception as e:
         result = str(e)
+        return common_response(code=500, message=result)
 
     dao = OCRDao()
 
@@ -35,7 +36,7 @@ async def upload_image(
 
     await dao.insert_letters(picture_id, letters=result)
 
-    return {"code": 200, "data": result}
+    return common_response(data=result)
 
 
 

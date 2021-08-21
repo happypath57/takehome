@@ -3,7 +3,7 @@ import base64
 import random
 import time
 import uuid
-from typing import List
+from typing import List, Any
 import hashlib
 import hmac
 
@@ -13,6 +13,16 @@ from fastapi import UploadFile
 
 from simple_ocr.config import BAIDU_GET_TOKEN_URL, BAIDU_APP_KEY, BAIDU_APP_SECRET, BAIDU_OCR_URL
 from simple_ocr.constants import ALLOW_PICTURE_EXTENSIONS
+
+
+def common_response(code: int = 200,
+                    data: Any = None,
+                    message: Any = None):
+    return dict(
+        code=code,
+        data=data,
+        message=message
+    )
 
 
 def validate_extension(extension: str) -> bool:
