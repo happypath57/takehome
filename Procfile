@@ -1,1 +1,1 @@
-web: uvicorn simple_ocr.main:app --port $PORT --host 0.0.0.0
+web: uvicorn simple_ocr.main:app --host=0.0.0.0 --port=${PORT:-5000}
