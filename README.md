@@ -1,16 +1,43 @@
-# Takehome
+## SimpleOCR
 
-Teletraan take-home projects.
+### 项目简介
 
-## How to use
+A Simple OCR Project
 
-1. Fork this project
-2. Select any project in [backend](https://github.com/teletraan/takehome/blob/master/backend), [frontend](https://github.com/teletraan/takehome/blob/master/frontend), [android](https://github.com/teletraan/takehome/blob/master/frontend)
-3. Take your time to complete the project
-4. Send back your link for review via Email
+### 项目文件
 
-## Contact us
+~~~
+├── Dockerfile				# Dockerfile
+├── Procfile					# Deploy to Heroku Config
+├── README.md					#
+├── UnitTest					# UnitTest
+│   ├── __init__.py
+│   ├── resources			# Test images
+│   ├── test_dao.py		# Test Dao
+│   └── test_ocr.py		# Test OCR
+├── manager.py				#
+├── requirements.txt	# requirement
+├── resources					# Images
+├── simple_ocr				# Core
+│   ├── __init__.py
+│   ├── config
+│   	├── __init__.py	# Config File Here
+│   ├── constants.py	# Project Constants
+│   ├── dao						# Dao
+│   ├── main.py				# Core Entry
+│   ├── models.py			# models
+│   └── ocr						# ocr module
+~~~
 
-**Email**: [job.cn@teletraan.io](mailto:job.cn@teletraan.io)
+### 项目启动
 
-**Wechat**: 17767179603 (DM us in case you get no replies after 2 business days)
+- Docker
+
+  ```
+  docker build -t simple-ocr .						# build
+  docker run  -p 5000:5000  simple-ocr		# run
+  ```
+
+### 项目部署
+
+项目目前暂时部署在了heroku的免费资源上：https://simple-ocr-demo.herokuapp.com/docs

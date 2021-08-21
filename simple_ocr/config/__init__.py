@@ -28,8 +28,6 @@ ROOT_DIR = os.path.abspath(os.path.dirname(__name__)) + "/../"
 
 # picture path
 RESOURCE_PATH = f"{ROOT_DIR}/resources"
-if not os.path.exists(RESOURCE_PATH):
-    os.mkdir(RESOURCE_PATH)
 
 # Tencent OCR
 # TENCENT_APP_ID = env.str("TENCENT_APP_ID")
